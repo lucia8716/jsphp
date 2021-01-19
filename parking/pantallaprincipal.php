@@ -18,7 +18,7 @@
 
     $alta = 'INSERT INTO nombre  VALUES ("' . $nombre . '")';
 
-    $controlusuario = 'SELECT nombre from nombre where nombre ="' . $nombre . '"';
+    $controlusuario = 'SELECT nombre from usuarios where nombre ="' . $nombre . '"';
 
 
     $resultado = mysqli_query($conexion, $controlusuario);

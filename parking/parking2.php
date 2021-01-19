@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="toast.css">
     <script src="toastr.js"></script>
     <script src="parking.js" type="text/javascript"></script>
+
     <script>
         $(document).ready(function() {
 
@@ -16,35 +17,32 @@
         });
     </script>
 
+
     <title>Document</title>
 </head>
 
 <body>
-
     <div id="di5">
-
         <img id="ima1" src="2.png">
-
     </div>
 
-
-
-    <div class="dv" id="di1">
+    <div class="dv" id="di2">
         <img id="ima1" src="1.png">
 
         <p>
-        <form method="POST" action="">
-            <input id="i1" type="text" name="nombre" required placeholder="Nombre">
-            <input id="i2" type="password" name="clave">
-            <button id="button1" type="submit" name="boton1" onclick="loging()"><img id="ima2" src="ope.jpg"></button>
-        </form>
 
+            <button id="button2" onclick="entrada()">Entradas</button>
+            <button id="button3" onclick="salidas1()">Salidas</button>
+            <button id="button4" onclick="consultar()">Consultas</button>
         </p>
+        <br><br>
+        <label id="l1">Nº Coches en parking</label><input id="i12" type="number" readonly>
+
     </div>
 
 
-  
 
+   
 
 </body>
 

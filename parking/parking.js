@@ -1,25 +1,15 @@
-//https://www.youtube.com/watch?v=GeCNShiLdpc
+var filnom=/^(?!.* (?: |$))[a-z\-]+$/;
+$("#di2").hide();
+function loging(){
 
-//https://www.cablenaranja.com/ajax-sencillo-con-php-y-jquery/
-var num;
-$("#button1").click(function (e) { 
-    var num = $("#i2").val();
-     
-});
+x1=$('#i1').val();
 
-var params = {
-    "numFactorial" : num
-};
+if(filnom.test(x1)==false){
 
+    toastr.warning("mal")
+    $('#i1').val('');
+    $('#i1').focus();
+    
+}
 
-$.ajax({
-    type: "POST",
-    url: "pantallaprincipal.php",
-    data: params,
-    dataType: "html",
-    success: function (response) {
-
-        $("resultado").value(response);
-        
-    }
-});
+}
