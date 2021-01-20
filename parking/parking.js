@@ -1,5 +1,5 @@
 var filnom=/^(?!.* (?: |$))[a-z\-]+$/;
-$("#di2").hide();
+
 function loging(){
 
 x1=$('#i1').val();

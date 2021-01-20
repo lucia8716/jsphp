@@ -56,21 +56,21 @@
 
     <?php
 
-    echo '<script type="text/javascript">$("#di2").hide();</script>';
+    //echo '<script type="text/javascript">$("#di2").hide();</script>';
     if (isset($_POST['boton1'])) {
         $nombre = $_POST['nombre'];
         $contraseña = intval($_POST['clave']);
         require_once "conectar_bd.php";
-        $controlusuario = 'SELECT nombre from usuarios where nombre ="' . $nombre . '"';
+        $controlusuario = 'SELECT * from nombre where nombre ="' . $nombre . '" and contraseña="' . $contraseña . '"';
         $resultado = mysqli_query($conexion, $controlusuario);
         if (mysqli_num_rows($resultado) > 0) { // La variable $conexion proviene del archivo conectar_bd.php
 
             echo '<script type="text/javascript">
             toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
             toastr.success("Cargando pagina")
-            $("#di1").hide();
-            
-            $("#di2").fadeIn(4500);        
+            document.getElementById("di1").setAttribute("style","display:none;");
+            document.getElementById("di2").setAttribute("style","display:block;");
+                 
             </script>';
         } else {
             echo '<script type="text/javascript">toastr.warning("Usuario no regitrado")</script>';

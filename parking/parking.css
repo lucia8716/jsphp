@@ -2,7 +2,11 @@
 /* Parte del css esta cogido de internet, para el plugin de los alert y para la consulta*/
 
   
+#di2{
 
+display: none;
+
+}
 .divx1{
  
     background-color: #ff8000;
