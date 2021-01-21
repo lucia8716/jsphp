@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="toast.css">
     <script src="toastr.js"></script>
-    <script src="farmacia.js" type="text/javascript"></script>
+
     <script>
         $(document).ready(function() {
             $('#btn1').click(function() {
@@ -52,7 +52,7 @@
 
 
 
-
+    <script src="farmacia.js" type="text/javascript"></script>
 </body>
 
 </html>

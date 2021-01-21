@@ -19,8 +19,25 @@ if(filtercontraseña.test(x2)==false){
 
 if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
 
-    
+    $(document).ready(function() {
+$('#btn1').click(function () { 
+    var datos=$('#form1').serialize();
 
+    alert(datos);
+    
+    $.ajax({
+        type: "POST",
+        url: "iniciarss.php",
+        data: datos,
+        dataType: "dataType",
+        success: function (response) {
+
+            
+            
+        }
+    });
+    
+});
 
 
 
