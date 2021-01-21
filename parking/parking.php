@@ -55,7 +55,7 @@
     <div class="dv" id="di3">
         <img id="ima1" src="1.png">
 
-        <form method="POST" action="">
+        <form id="formulario2" method="POST" action="">
             <p>
                 <input id="i3" type="text" name="matricula" required placeholder="Numero de matricula" maxlength="7" minlength="7">
                 <button id="button5" type="submit" name="boton5" onclick="matriculacion()">Comprobar</button>
@@ -117,21 +117,33 @@
         mysqli_close($conexion);
     } elseif (isset($_POST['boton5'])) {
 
-
-
         $matricula = $_POST['matricula'];
         require_once "conectar_bd.php";
 
         $controldematricula = mysqli_query($conexion, 'SELECT * from coches where matricula ="' . $matricula . '"') or die("Error en la consulta");
 
-        if (mysqli_num_rows($controldematricula) > 0) {
+        if (mysqli_num_rows($controldematricula) == 0) {
 
 
             echo '<script type="text/javascript">
             toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
-            toastr.success("coche registrado")</script>';
+            toastr.success("coche no registrado, se abrira formulario de registro");
+            document.getElementById("di1").setAttribute("style","display:none;");
+            document.getElementById("di4").setAttribute("style","display:block;");
+            var x1="' . $matricula . '";
+            x1=x1.toUpperCase();
+            $("#i4").val(x1);
+            </script>
+            
+            ';
         } else {
-            echo 'coche no registrado';
+            echo '<script type="text/javascript">
+            toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+            toastr.success("Registrado, la puerta se esta abriendo");
+            document.getElementById("di1").setAttribute("style","display:none;");
+            document.getElementById("di3").setAttribute("style","display:block;");
+            
+            </script>';
         }
 
         mysqli_close($conexion);

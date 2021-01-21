@@ -23,6 +23,12 @@ if(filtercontraseña.test(x2)==false){
     
 }
 
+
+
+
+
+
+
 }
 function entrada() { //muestra y quita div
 
@@ -34,7 +40,8 @@ function matriculacion(){
 
     x3=$('#i3').val();
     x3=x3.toUpperCase();
-console.log(x3);
+    var confirmar=false;
+
 
     if(filtermatricula.test(x3)==false){
 
@@ -42,9 +49,13 @@ console.log(x3);
         $('#i3').val('');
         $('#i3').focus();
         
+        
     }
 
-  }
+
+    }
+
+  
 
 
  function volver3(){//funcion para el boton de volver
