@@ -2,6 +2,9 @@ var filnom=/^(?!.* (?: |$))[a-z\-]+$/;
 var filtercontraseña=/^([a-zA-Z0-9]){6}/;
 var filtermatricula=/^([0-9]){4}([a-zA-Z]){3}/;
 
+$('#di2').hide();
+
+
 function loging(){
 x1=$('#i1').val();
 x2=$('#i2').val();
@@ -16,32 +19,58 @@ if(filtercontraseña.test(x2)==false){
     $('#i2').val('');
     $('#i2').focus();
 }
-
 if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
-
-    $(document).ready(function() {
-$('#btn1').click(function () { 
-    var datos=$('#form1').serialize();
-
-    alert(datos);
-    
+                 
     $.ajax({
         type: "POST",
-        url: "iniciarss.php",
-        data: datos,
-        dataType: "dataType",
+        url: "consulta1.php",
+        data: {nombre:x1,contrasena:x2},
+        async: true,
+        beforeSend: function () {
+            
+    
+        },
         success: function (response) {
+    
+            console.log(response);
+            if (response==1){
+                console.log(response);
+                toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+                toastr.success("Usuario conectado, Cargando pagina");
+                $('#di1').hide();
+                $('#di2').fadeIn();
+                    
+            }
+            
+            if (response==0){
 
+                toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+                toastr.warning("Usuario no registrado");
+                $('#i1').val('');
+                $('#i2').val('');
+                $('#i1').focus();
+
+            }
+
+            if (response==2){
+
+                toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+                toastr.warning("Contraseña incorrecta");
+                $('#i2').val('');
+                $('#i2').focus();
+
+            }
+        },
+    
+        error: function (error) {
+
+            toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+            toastr.warning(error);
             
             
         }
     });
-    
-});
-
-
-
-
+ }
 }
 
 
@@ -52,10 +81,6 @@ $('#btn1').click(function () {
 
 
 
-
-
-
-}
 function entrada() { //muestra y quita div
 
     $("#di2").hide();
@@ -83,6 +108,5 @@ console.log(x3);
     $("#di3").hide();
       $("#di2").fadeIn("slow");
       document.getElementById('i3').value='';
-  
   
   }
