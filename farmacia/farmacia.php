@@ -35,9 +35,9 @@
 
 
         <p>
-            <button id="btn2" type="button" name="boton2" onclick="loging()">Compra de articulos</button>
-            <button id="btn3" type="button" name="boton3" onclick="loging()">Venta de articulos</button>
-            <button id="btn4" type="button" name="boton4" onclick="loging()">Pedidos de articulos</button>
+            <button id="btn2" type="button" name="boton2" onclick="">Compra de articulos</button>
+            <button id="btn3" type="button" name="boton3" onclick="">Venta de articulos</button>
+            <button id="btn4" type="button" name="boton4" onclick="">Pedidos de articulos</button>
         </p>
 
     </div>

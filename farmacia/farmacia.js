@@ -5,7 +5,7 @@ var filtermatricula=/^([0-9]){4}([a-zA-Z]){3}/;
 $('#di2').hide();
 
 
-function loging(){
+function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
 x1=$('#i1').val();
 x2=$('#i2').val();
 if(filnom.test(x1)==false){
@@ -20,7 +20,8 @@ if(filtercontraseña.test(x2)==false){
     $('#i2').focus();
 }
 if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
-                 
+            
+    //en esta parte se conecta a bbdd y comprueba si esta registrado
     $.ajax({
         type: "POST",
         url: "consulta1.php",
@@ -33,7 +34,7 @@ if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
         success: function (response) {
     
             console.log(response);
-            if (response==1){
+            if (response==1){//esta registrado
                 console.log(response);
                 toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
                 toastr.success("Usuario conectado, Cargando pagina");
@@ -42,7 +43,7 @@ if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
                     
             }
             
-            if (response==0){
+            if (response==0){//no esta registrado
 
                 toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
                 toastr.warning("Usuario no registrado");
@@ -52,7 +53,7 @@ if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
 
             }
 
-            if (response==2){
+            if (response==2){//contraseña incorrecta
 
                 toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
                 toastr.warning("Contraseña incorrecta");
