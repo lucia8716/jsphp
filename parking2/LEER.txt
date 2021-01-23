@@ -1,0 +1,33 @@
+Hola jesus¡¡
+
+Te escribo sobre un par de puntos.
+
+Al final lo he hecho con ajax, para mi me resulta mas facil, de la forma que nos pasaste consegui que me funcionara
+pero me hacia cosas raras.
+
+El archivo que hay que lanzar es parking.php
+
+tengo bastantes archivos de consultas, no he encotrado la forma de llamar a una funcion de un archivo a traves de ajax(pero
+supongo que la abra)
+
+hay solo un usuario en la bbdd
+
+es 76035771W clv:123456
+
+la bbdd esta formato xml, si tienes problemas para importar me dices y lo vemos (se llama bbdd_parking)
+
+en la tabla coches hay muchos regitros. Lo he hecho de tal forma para que haya 399 en el parking y asi puedas ver que se
+controla el limite del parking
+
+Los insert de la tabla los hice a traves de una web que generaba scrit aletorios, en los primeros me confundi con el
+formato de la matricula los meti con solo dos letras en vez de tres(por si los ves en el listado de consultas).
+
+las estancia lo he controlado traves de la bbdd(con una columna con datos 1 o 0) y con un contador. Se podia haber hecho
+solo con la bbdd, pero como hablaste en clase de hacerlo con un contador he unido los dos. Primero rescato el valor a traves de 
+la bbdd y luego utilizo un contador
+
+A parte de lo que pides en el ejercicio en añadido una parte de consultas.
+hay puedes ver totales, coches en parking y coches registrados fuera del parking
+
+
+

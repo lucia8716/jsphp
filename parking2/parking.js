@@ -1,4 +1,4 @@
-var filnom=/^(?!.* (?: |$))[a-z\-]+$/;
+var filnom=/^([0-9]){8}([a-zA-Z]){1}/;
 var filtercontraseña=/^([a-zA-Z0-9]){6}/;
 var filtermatricula=/^([0-9]){4}([a-zA-Z]){3}/;
 var filteremail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -43,9 +43,10 @@ function contar() {
 function loging(){
 
 x1=$('#i1').val();
+x1=x1.toUpperCase();
 x2=$('#i2').val();
 
-if(filnom.test(x1)==false){
+if(filnom.test(x1)==false||x1.length<2){
 
     toastr.warning("Nombre con formato incorrecto");
     $('#i1').val('');
@@ -242,6 +243,18 @@ $.ajax({
   
   }
 
+  function volver2(){//funcion para el boton de volver
+    $("#di9").hide();
+    $("#di8").hide();
+    $("#di7").hide();
+      $("#di3").fadeIn("slow");
+        
+  
+  }
+
+
+
+
   function resgitrocoches() { 
 
     x4=$('#i4').val();
@@ -256,7 +269,7 @@ $.ajax({
     
 
 
-    if (filtermarca.test(x5)==false) {
+    if (filtermarca.test(x5)==false||x5.length<2) {
         $('#i5').val('');
         $('#i5').focus();
         
@@ -273,14 +286,14 @@ $.ajax({
         
       }
       
-      if (filnom.test(x7)==false) {
+      if (filnom.test(x7)==false||x7.length<3) {
         $('#i7').val('');
         $('#i7').focus();
         toastr.warning("color con formato incorrecto");
         
       }
       
-      if (filnom.test(x8)==false) {
+      if (filnom.test(x8)==false||x8.length<2) {
         $('#i8').val('');
         $('#i8').focus();
         
@@ -288,14 +301,14 @@ $.ajax({
         
       }
       
-      if (filnom.test(x9)==false) {
+      if (filnom.test(x9)==false||x9.length<2) {
         $('#i9').val('');
         $('#i9').focus();
                 toastr.warning("apellido1 con formato incorrecto");
         
       }
       
-      if (filnom.test(x10)==false) {
+      if (filnom.test(x10)==false||x10.length<2) {
         $('#i10').val('');
         $('#i10').focus();
                 toastr.warning("apellido2 con formato incorrecto");
@@ -473,12 +486,26 @@ $.ajax({
     
       }
 
+      function tabla3(){
+        $("#di1").hide();
+        $("#di3").hide();
+        $("#di7").fadeIn("slow");
+        $("#di8").fadeIn("slow");
+        $("#di9").fadeIn("slow");
+        $.ajax({
+            type: "POST",
+            url: "consulta9.php",
+            async: true,
+            success: function (response) {
+                console.log(response);
+                var info=JSON.parse(response);
+                $('#mostrar').html(info);
+                
+            }
+        });
+        
+          }
 
-function volver(){
-    $("#di7").hide();
-    $("#di8").hide();
-    $("#di9").hide();
-    $("#di3").fadeIn("slow");
 
 
-}
+

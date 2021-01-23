@@ -30,7 +30,7 @@
     <div class="dv" id="di2">
         <img id="ima1" src="1.png">
         <p>
-            <input id="i1" type="text" name="nombre" required placeholder="Nombre">
+            <input id="i1" type="text" name="nombre" required placeholder="DNI" maxlength=9>
             <input id="i2" type="password" name="contrasena" required placeholder="Contraseña" minlength="6" maxlength="6">
             <button id="button1" type="submit" name="boton1" onclick="loging()"><img id="ima2" src="ope.jpg"></button>
         </p>
@@ -65,12 +65,12 @@
         <p>
 
             <input id="i4" type="text" name="matricula" maxlength="7" minlength="7" readonly>
-            <input id="i5" type="text" name="marca" required placeholder="Marca">
-            <input id="i6" type="text" name="modelo" required placeholder="Modelo">
-            <input id="i7" type="text" name="color" required placeholder="Color">
-            <input id="i8" type="text" name="nombre" required placeholder="Nombre Propietario">
-            <input id="i9" type="text" name="ape1" required placeholder="Apellido 1 Propietario">
-            <input id="i10" type="text" name="ape2" required placeholder="Apellido 2 Propietario">
+            <input id="i5" type="text" name="marca" required placeholder="Marca" maxlength="15">
+            <input id="i6" type="text" name="modelo" required placeholder="Modelo" maxlength="15">
+            <input id="i7" type="text" name="color" required placeholder="Color" maxlength="15">
+            <input id="i8" type="text" name="nombre" required placeholder="Nombre Propietario" maxlength="15">
+            <input id="i9" type="text" name="ape1" required placeholder="Apellido 1 Propietario" maxlength="15">
+            <input id="i10" type="text" name="ape2" required placeholder="Apellido 2 Propietario" maxlength="15">
             <input id="i11" type="text" name="email" required placeholder="Email">
 
             <button id="button9" onclick="resgitrocoches()">Registrar</button>
@@ -93,10 +93,10 @@
     <div class="dv" id="di9">
 
         <p>
-            <button id="button2" onclick="volver()">Volver</button>
+            <button id="button2" onclick="volver2()">Volver</button>
             <button id="button3" onclick="tabla()">REGISTROS</button>
             <button id="button4" onclick="tabla2()">En Parking</button>
-            <button id="button4" onclick="">Fuera parking</button>
+            <button id="button14" onclick="tabla3()">Fuera parking</button>
         </p>
 
     </div>
