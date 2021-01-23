@@ -40,7 +40,7 @@
         <img id="ima1" src="1.png">
         <p>
             <button id="button2" onclick="entrada()">Entradas</button>
-            <button id="button3" onclick="salidas1()">Salidas</button>
+            <button id="button3" onclick="salidacoches()">Salidas</button>
             <button id="button4" onclick="consultar()">Consultas</button>
         </p>
         <br><br>
@@ -64,19 +64,38 @@
 
         <p>
 
-            <input id="i4" type="text" name="matricula" required placeholder="Numero de matricula" maxlength="7" minlength="7" readonly>
+            <input id="i4" type="text" name="matricula" maxlength="7" minlength="7" readonly>
             <input id="i5" type="text" name="marca" required placeholder="Marca">
             <input id="i6" type="text" name="modelo" required placeholder="Modelo">
-            <input id="i11" type="text" name="color" required placeholder="Color">
-            <input id="i7" type="text" name="nombre" required placeholder="Nombre Propietario">
-            <input id="i8" type="text" name="ape1" required placeholder="Apellido 1 Propietario">
-            <input id="i9" type="text" name="ape2" required placeholder="Apellido 2 Propietario">
-            <input id="i10" type="text" name="email" required placeholder="Email">
+            <input id="i7" type="text" name="color" required placeholder="Color">
+            <input id="i8" type="text" name="nombre" required placeholder="Nombre Propietario">
+            <input id="i9" type="text" name="ape1" required placeholder="Apellido 1 Propietario">
+            <input id="i10" type="text" name="ape2" required placeholder="Apellido 2 Propietario">
+            <input id="i11" type="text" name="email" required placeholder="Email">
 
-            <button id="button9" onclick="altanueva()">Registrar</button>
+            <button id="button9" onclick="resgitrocoches()">Registrar</button>
 
         </p>
     </div>
+
+    <div class="dv" id="di6">
+        <img id="ima1" src="1.png">
+
+        <p>
+
+            <input id="i13" type="text" name="matricula2" required placeholder="Numero de matricula" maxlength="7" minlength="7">
+            <button id="button10" type="submit" name="boton10" onclick="matriculacionsalida()">Comprobar</button>
+            <button id="button11" onclick="volver()">Salir</button>
+
+        </p>
+    </div>
+
+
+
+
+
+
+
 </body>
 
 <script src="parking.js" type="text/javascript"></script>
