@@ -90,6 +90,17 @@
         </p>
     </div>
 
+    <div class="dv" id="di9">
+
+        <p>
+            <button id="button2" onclick="volver()">Volver</button>
+            <button id="button3" onclick="tabla()">REGISTROS</button>
+            <button id="button4" onclick="tabla2()">En Parking</button>
+            <button id="button4" onclick="">Fuera parking</button>
+        </p>
+
+    </div>
+
 
     <div id="di7">
         <table id="tabla">
@@ -107,6 +118,8 @@
                 </tr>
             </thead>
         </table>
+    </div>
+    <div id="di8">
         <table id="tabla2">
             <thead id="mostrar">
                 <tr>

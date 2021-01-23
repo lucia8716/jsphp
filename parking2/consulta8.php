@@ -1,7 +1,7 @@
 <?php
 
 require_once "conectar_bd.php";
-$actualizacionestancia = 'select * from coches';
+$actualizacionestancia = 'select * from coches where estancia=1;';
 $busqueda = mysqli_query($conexion, $actualizacionestancia) or die("Problemas en el select" . mysqli_error($conexion));
 
 $htmltable = '';

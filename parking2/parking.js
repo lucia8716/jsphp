@@ -12,6 +12,10 @@ $('#di4').hide();
 $('#di5').hide();
 $('#di6').hide();
 $('#di7').hide();
+$('#di8').hide();
+$('#di9').hide();
+
+
 
 
 
@@ -432,7 +436,8 @@ if (response==0) {
 $("#di1").hide();
 $("#di3").hide();
 $("#di7").fadeIn("slow");
-
+$("#di8").fadeIn("slow");
+$("#di9").fadeIn("slow");
 $.ajax({
     type: "POST",
     url: "consulta7.php",
@@ -440,13 +445,40 @@ $.ajax({
     success: function (response) {
         console.log(response);
         var info=JSON.parse(response);
-        $('#ma').html(info.matricula);
-        $('#mar').html(info.marca);
-
+        $('#mostrar').html(info);
         
     }
 });
 
-
-
   }
+
+
+  function tabla2(){
+    $("#di1").hide();
+    $("#di3").hide();
+    $("#di7").fadeIn("slow");
+    $("#di8").fadeIn("slow");
+    $("#di9").fadeIn("slow");
+    $.ajax({
+        type: "POST",
+        url: "consulta8.php",
+        async: true,
+        success: function (response) {
+            console.log(response);
+            var info=JSON.parse(response);
+            $('#mostrar').html(info);
+            
+        }
+    });
+    
+      }
+
+
+function volver(){
+    $("#di7").hide();
+    $("#di8").hide();
+    $("#di9").hide();
+    $("#di3").fadeIn("slow");
+
+
+}
