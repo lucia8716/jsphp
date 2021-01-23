@@ -41,7 +41,7 @@
         <p>
             <button id="button2" onclick="entrada()">Entradas</button>
             <button id="button3" onclick="salidacoches()">Salidas</button>
-            <button id="button4" onclick="consultar()">Consultas</button>
+            <button id="button4" onclick="tabla()">Consultas</button>
         </p>
         <br><br>
         <label id="l1">Nº Coches en parking</label><input id="i12" readonly>
@@ -88,6 +88,40 @@
             <button id="button11" onclick="volver()">Salir</button>
 
         </p>
+    </div>
+
+
+    <div id="di7">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>MATRICULA</th>
+                    <th>MARCA</th>
+                    <th>MODELO</th>
+                    <th>COLOR</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO1</th>
+                    <th>APELLIDO2</th>
+                    <th>EMAIL</th>
+                    <th>ESTANCIA</th>
+                </tr>
+            </thead>
+        </table>
+        <table id="tabla2">
+            <thead id="mostrar">
+                <tr>
+                    <th id="ma"></th>
+                    <th id="mar"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
     </div>
 
 

@@ -11,6 +11,7 @@ $('#di3').hide();
 $('#di4').hide();
 $('#di5').hide();
 $('#di6').hide();
+$('#di7').hide();
 
 
 
@@ -424,5 +425,28 @@ if (response==0) {
     });
 
 }
+
+  }
+
+  function tabla(){
+$("#di1").hide();
+$("#di3").hide();
+$("#di7").fadeIn("slow");
+
+$.ajax({
+    type: "POST",
+    url: "consulta7.php",
+    async: true,
+    success: function (response) {
+        console.log(response);
+        var info=JSON.parse(response);
+        $('#ma').html(info.matricula);
+        $('#mar').html(info.marca);
+
+        
+    }
+});
+
+
 
   }
