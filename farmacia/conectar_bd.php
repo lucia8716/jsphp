@@ -5,14 +5,14 @@
 define('SERVIDOR', 'localhost');
 define('USUARIO', 'root');
 define('CONTRASENIA', '');
-define('BASEDATOS', 'bbdd_parking');
+define('BASEDATOS', 'bbdd_farmacia');
 
- 
+
 //Realizamos la conexión con la Base de Datos
 $conexion = mysqli_connect(SERVIDOR, USUARIO, CONTRASENIA, BASEDATOS);
 
- 
+
 // Controlamos si se ha producido un error a la hora de conectar con la BD. Se puede utilizar mysqli_connect ... or
-if($conexion === false){
+if ($conexion === false) {
     die("ERROR: No se ha podido conectar con la Base de Datos " . mysqli_connect_error());
 }
