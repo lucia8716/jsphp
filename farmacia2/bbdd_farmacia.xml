@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Servidor: 127.0.0.1:3306
-- Tiempo de generación: 24-01-2021 a las 00:58:38
+- Tiempo de generación: 24-01-2021 a las 20:56:06
 - Versión del servidor: 5.7.31
 - Versión de PHP: 7.3.21
 -->
@@ -16,6 +16,18 @@
     -->
     <pma:structure_schemas>
         <pma:database name="bbdd_farmacia" collation="latin1_spanish_ci" charset="latin1">
+            <pma:table name="medicamentos">
+                CREATE TABLE `medicamentos` (
+                  `referencia` varchar(12) COLLATE latin1_spanish_ci NOT NULL,
+                  `farmaceutica` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+                  `nombre` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+                  `precio_compra` int(20) NOT NULL,
+                  `precio_venta` int(20) NOT NULL,
+                  `unidades` int(20) NOT NULL,
+                  PRIMARY KEY (`referencia`),
+                  UNIQUE KEY `referencia` (`referencia`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
             <pma:table name="usuarios">
                 CREATE TABLE `usuarios` (
                   `nombre` varchar(24) COLLATE latin1_spanish_ci NOT NULL,
@@ -31,6 +43,935 @@
     - Base de datos: 'bbdd_farmacia'
     -->
     <database name="bbdd_farmacia">
+        <!-- Tabla medicamentos -->
+        <table name="medicamentos">
+            <column name="referencia">12345678901a</column>
+            <column name="farmaceutica">pfizer</column>
+            <column name="nombre">sars2</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">15</column>
+            <column name="unidades">6</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">460054QGR808</column>
+            <column name="farmaceutica">Eu Enim Corporation</column>
+            <column name="nombre">Frye</column>
+            <column name="precio_compra">16</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">23</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">583707YCT359</column>
+            <column name="farmaceutica">Mollis Dui LLP</column>
+            <column name="nombre">Nicholson</column>
+            <column name="precio_compra">16</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">86</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">506720MTJ773</column>
+            <column name="farmaceutica">Lorem Consulting</column>
+            <column name="nombre">Wiley</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">15</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">031296HDR089</column>
+            <column name="farmaceutica">Lacinia Mattis LLP</column>
+            <column name="nombre">Ballard</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">18</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">798081OLF238</column>
+            <column name="farmaceutica">Libero Mauris Corp.</column>
+            <column name="nombre">James</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">100</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">437555FXD675</column>
+            <column name="farmaceutica">Ornare Tortor At Consulting</column>
+            <column name="nombre">Rivera</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">40</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">290524SZX410</column>
+            <column name="farmaceutica">Placerat Augue Sed Foundation</column>
+            <column name="nombre">Barton</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">3</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">329033FBJ150</column>
+            <column name="farmaceutica">Non Limited</column>
+            <column name="nombre">Conrad</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">62</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">947730UKW762</column>
+            <column name="farmaceutica">Et Malesuada Inc.</column>
+            <column name="nombre">Blanchard</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">57</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">301254BVZ844</column>
+            <column name="farmaceutica">Non Enim Mauris Ltd</column>
+            <column name="nombre">Sanders</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">38</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">261945VOD610</column>
+            <column name="farmaceutica">Leo Vivamus Ltd</column>
+            <column name="nombre">Spears</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">99</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">986196PDS538</column>
+            <column name="farmaceutica">Elit Pharetra Ut Foundation</column>
+            <column name="nombre">Ortiz</column>
+            <column name="precio_compra">3</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">65</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">890416PFP833</column>
+            <column name="farmaceutica">Fermentum Fermentum Arcu Inc.</column>
+            <column name="nombre">Conner</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">46</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">271078TSS939</column>
+            <column name="farmaceutica">Erat Vel Pede Associates</column>
+            <column name="nombre">Buchanan</column>
+            <column name="precio_compra">16</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">1</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">543465PLR245</column>
+            <column name="farmaceutica">Vitae Aliquet Nec Limited</column>
+            <column name="nombre">Le</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">72</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">665201AAN988</column>
+            <column name="farmaceutica">Fusce Dolor Quam Inc.</column>
+            <column name="nombre">Levine</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">55</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">007862PMB142</column>
+            <column name="farmaceutica">Tincidunt Associates</column>
+            <column name="nombre">Schmidt</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">28</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">717933LGQ016</column>
+            <column name="farmaceutica">Nibh Vulputate Mauris LLP</column>
+            <column name="nombre">William</column>
+            <column name="precio_compra">16</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">19</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">334933YEZ355</column>
+            <column name="farmaceutica">Semper Institute</column>
+            <column name="nombre">Valdez</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">7</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">897682MQL013</column>
+            <column name="farmaceutica">Ultricies Ornare Ltd</column>
+            <column name="nombre">Frederick</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">92</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">304731UJI092</column>
+            <column name="farmaceutica">Non Enim Commodo Foundation</column>
+            <column name="nombre">Wilcox</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">40</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">391770PSV306</column>
+            <column name="farmaceutica">Orci Industries</column>
+            <column name="nombre">James</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">57</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">713703OFB990</column>
+            <column name="farmaceutica">Eu Company</column>
+            <column name="nombre">Riddle</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">95</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">583044FZP901</column>
+            <column name="farmaceutica">Integer Urna Vivamus LLC</column>
+            <column name="nombre">Oneill</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">80</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">155975VPW403</column>
+            <column name="farmaceutica">Ut Sagittis Corporation</column>
+            <column name="nombre">Booker</column>
+            <column name="precio_compra">4</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">38</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">245078OSC738</column>
+            <column name="farmaceutica">Sit Amet Luctus Foundation</column>
+            <column name="nombre">Estrada</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">23</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">081243QCC597</column>
+            <column name="farmaceutica">Quis Arcu Corporation</column>
+            <column name="nombre">Webb</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">13</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">863578ADJ406</column>
+            <column name="farmaceutica">Nonummy Corporation</column>
+            <column name="nombre">Ray</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">86</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">621838JCS587</column>
+            <column name="farmaceutica">Erat Corp.</column>
+            <column name="nombre">Burnett</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">27</column>
+            <column name="unidades">13</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">960087UZL681</column>
+            <column name="farmaceutica">Enim Sed LLC</column>
+            <column name="nombre">Howard</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">74</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">274880XZW633</column>
+            <column name="farmaceutica">Orci Quis Lectus Consulting</column>
+            <column name="nombre">Benson</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">2</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">837298YVX374</column>
+            <column name="farmaceutica">Leo Cras Vehicula Associates</column>
+            <column name="nombre">Pugh</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">11</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">934071LMR853</column>
+            <column name="farmaceutica">At Arcu Vestibulum Corporation</column>
+            <column name="nombre">Giles</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">4</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">098341YJC259</column>
+            <column name="farmaceutica">Est Limited</column>
+            <column name="nombre">Salazar</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">96</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">750550OFN476</column>
+            <column name="farmaceutica">Vivamus Rhoncus Company</column>
+            <column name="nombre">Summers</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">98</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">511068ADU902</column>
+            <column name="farmaceutica">Etiam Ltd</column>
+            <column name="nombre">Wynn</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">7</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">139550NZY862</column>
+            <column name="farmaceutica">Duis Dignissim Tempor Inc.</column>
+            <column name="nombre">Bennett</column>
+            <column name="precio_compra">13</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">95</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">857357YDQ382</column>
+            <column name="farmaceutica">Eu Odio LLC</column>
+            <column name="nombre">Mathis</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">6</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">865001SOE035</column>
+            <column name="farmaceutica">Diam Dictum Incorporated</column>
+            <column name="nombre">Sanford</column>
+            <column name="precio_compra">1</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">32</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">278014CPI972</column>
+            <column name="farmaceutica">Aenean Eget Magna Associates</column>
+            <column name="nombre">Carroll</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">29</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">729369RUK896</column>
+            <column name="farmaceutica">Nisi Dictum Augue Limited</column>
+            <column name="nombre">Hampton</column>
+            <column name="precio_compra">10</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">74</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">633208RYZ201</column>
+            <column name="farmaceutica">Dis Parturient Montes Corp.</column>
+            <column name="nombre">Head</column>
+            <column name="precio_compra">10</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">8</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">432526UQX070</column>
+            <column name="farmaceutica">Sit Inc.</column>
+            <column name="nombre">Parsons</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">84</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">203369JVD524</column>
+            <column name="farmaceutica">Sapien Cursus In PC</column>
+            <column name="nombre">Avery</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">18</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">836381TXD532</column>
+            <column name="farmaceutica">Quisque Ornare Tortor LLC</column>
+            <column name="nombre">Preston</column>
+            <column name="precio_compra">1</column>
+            <column name="precio_venta">27</column>
+            <column name="unidades">39</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">111727IAL557</column>
+            <column name="farmaceutica">Integer Associates</column>
+            <column name="nombre">Little</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">95</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">029147BOD843</column>
+            <column name="farmaceutica">Nam Tempor Corporation</column>
+            <column name="nombre">Hull</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">21</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">279812HAK649</column>
+            <column name="farmaceutica">Aliquam Company</column>
+            <column name="nombre">Wolf</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">85</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">946710NAJ507</column>
+            <column name="farmaceutica">Leo Elementum Foundation</column>
+            <column name="nombre">Hudson</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">56</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">120142BAA148</column>
+            <column name="farmaceutica">Iaculis Nec Company</column>
+            <column name="nombre">Lane</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">16</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">193497GMX823</column>
+            <column name="farmaceutica">Id Risus Consulting</column>
+            <column name="nombre">Gardner</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">78</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">951474DZI985</column>
+            <column name="farmaceutica">Adipiscing Corp.</column>
+            <column name="nombre">Lucas</column>
+            <column name="precio_compra">13</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">32</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">736272OCC760</column>
+            <column name="farmaceutica">Accumsan Interdum Libero Corp.</column>
+            <column name="nombre">Langley</column>
+            <column name="precio_compra">6</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">22</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">100379XQQ831</column>
+            <column name="farmaceutica">Libero Corp.</column>
+            <column name="nombre">Goodwin</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">77</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">689861UAF129</column>
+            <column name="farmaceutica">Et Institute</column>
+            <column name="nombre">Kennedy</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">29</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">823697QNO254</column>
+            <column name="farmaceutica">Eu Dolor Egestas Institute</column>
+            <column name="nombre">Randall</column>
+            <column name="precio_compra">1</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">29</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">066293FQL953</column>
+            <column name="farmaceutica">Sit Amet Orci Corporation</column>
+            <column name="nombre">Pickett</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">62</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">825546AOS237</column>
+            <column name="farmaceutica">Vestibulum Lorem Consulting</column>
+            <column name="nombre">Fischer</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">38</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">074323RAS106</column>
+            <column name="farmaceutica">Quam Curabitur Foundation</column>
+            <column name="nombre">Cross</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">84</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">948855HFR207</column>
+            <column name="farmaceutica">Facilisis Industries</column>
+            <column name="nombre">Solomon</column>
+            <column name="precio_compra">13</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">89</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">471150XJH902</column>
+            <column name="farmaceutica">Sed PC</column>
+            <column name="nombre">David</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">27</column>
+            <column name="unidades">7</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">815443IYD002</column>
+            <column name="farmaceutica">Mauris Foundation</column>
+            <column name="nombre">Murphy</column>
+            <column name="precio_compra">10</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">18</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">295311XAM247</column>
+            <column name="farmaceutica">Sapien Consulting</column>
+            <column name="nombre">Francis</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">100</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">094028SER352</column>
+            <column name="farmaceutica">Cursus Et Institute</column>
+            <column name="nombre">Cabrera</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">9</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">789479RTH043</column>
+            <column name="farmaceutica">Tortor At Risus Limited</column>
+            <column name="nombre">Murphy</column>
+            <column name="precio_compra">9</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">6</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">933536CDG061</column>
+            <column name="farmaceutica">Aliquam Enim Corporation</column>
+            <column name="nombre">Porter</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">45</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">220383FMF118</column>
+            <column name="farmaceutica">A Purus Duis Incorporated</column>
+            <column name="nombre">Knapp</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">92</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">258756HLQ248</column>
+            <column name="farmaceutica">Purus Accumsan Interdum Institute</column>
+            <column name="nombre">Madden</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">10</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">581736OZA898</column>
+            <column name="farmaceutica">Cum Corp.</column>
+            <column name="nombre">Kirby</column>
+            <column name="precio_compra">3</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">83</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">582424UUB512</column>
+            <column name="farmaceutica">Quis Turpis Vitae Corp.</column>
+            <column name="nombre">Macias</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">57</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">328447LTH839</column>
+            <column name="farmaceutica">Enim Foundation</column>
+            <column name="nombre">Hickman</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">22</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">145265XOE724</column>
+            <column name="farmaceutica">Ipsum Ac Mi Associates</column>
+            <column name="nombre">Gomez</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">28</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">064224JJG860</column>
+            <column name="farmaceutica">Sit Amet Ltd</column>
+            <column name="nombre">Merrill</column>
+            <column name="precio_compra">6</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">68</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">791152ZLA228</column>
+            <column name="farmaceutica">Lorem Consulting</column>
+            <column name="nombre">Jacobson</column>
+            <column name="precio_compra">10</column>
+            <column name="precio_venta">27</column>
+            <column name="unidades">31</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">026587IVS285</column>
+            <column name="farmaceutica">Justo Sit Amet Consulting</column>
+            <column name="nombre">Leonard</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">99</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">218734KVF341</column>
+            <column name="farmaceutica">Mauris Company</column>
+            <column name="nombre">Guerrero</column>
+            <column name="precio_compra">4</column>
+            <column name="precio_venta">27</column>
+            <column name="unidades">68</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">635083DOU433</column>
+            <column name="farmaceutica">Id Nunc Company</column>
+            <column name="nombre">Wiley</column>
+            <column name="precio_compra">16</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">76</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">148736NWF908</column>
+            <column name="farmaceutica">Ipsum Industries</column>
+            <column name="nombre">Wilkins</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">50</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">447457ZNK867</column>
+            <column name="farmaceutica">Suspendisse Limited</column>
+            <column name="nombre">Richardson</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">85</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">058451XCD735</column>
+            <column name="farmaceutica">Phasellus Ltd</column>
+            <column name="nombre">Dillard</column>
+            <column name="precio_compra">4</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">14</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">707768GRN714</column>
+            <column name="farmaceutica">Felis Corporation</column>
+            <column name="nombre">Hull</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">40</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">661944LSJ559</column>
+            <column name="farmaceutica">Imperdiet Nec Consulting</column>
+            <column name="nombre">Williams</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">13</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">472311EYT967</column>
+            <column name="farmaceutica">Nulla LLC</column>
+            <column name="nombre">Hamilton</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">73</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">663210PGV466</column>
+            <column name="farmaceutica">At LLC</column>
+            <column name="nombre">Nunez</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">46</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">580863BOJ932</column>
+            <column name="farmaceutica">Ornare Tortor At LLC</column>
+            <column name="nombre">Short</column>
+            <column name="precio_compra">3</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">9</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">120201FMO450</column>
+            <column name="farmaceutica">Nulla Cras Eu PC</column>
+            <column name="nombre">Castro</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">65</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">909181XRK794</column>
+            <column name="farmaceutica">Ultrices Sit Foundation</column>
+            <column name="nombre">Dale</column>
+            <column name="precio_compra">12</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">81</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">310014DZJ498</column>
+            <column name="farmaceutica">Metus Aenean Sed Associates</column>
+            <column name="nombre">Grimes</column>
+            <column name="precio_compra">3</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">2</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">782990PDT904</column>
+            <column name="farmaceutica">Orci Luctus Inc.</column>
+            <column name="nombre">Bradshaw</column>
+            <column name="precio_compra">4</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">62</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">722442NQN246</column>
+            <column name="farmaceutica">Nisl Maecenas Limited</column>
+            <column name="nombre">Blake</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">47</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">577778FEL263</column>
+            <column name="farmaceutica">Quisque Ornare Tortor Consulting</column>
+            <column name="nombre">Small</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">15</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">956279KYO554</column>
+            <column name="farmaceutica">Ornare Placerat Institute</column>
+            <column name="nombre">Reid</column>
+            <column name="precio_compra">1</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">49</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">513183DPC311</column>
+            <column name="farmaceutica">Egestas Nunc Sed PC</column>
+            <column name="nombre">Frye</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">19</column>
+            <column name="unidades">88</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">730118PXN921</column>
+            <column name="farmaceutica">Tortor Nunc Associates</column>
+            <column name="nombre">Hess</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">10</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">529143MUE278</column>
+            <column name="farmaceutica">Donec Corp.</column>
+            <column name="nombre">Anthony</column>
+            <column name="precio_compra">1</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">75</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">996847DQI033</column>
+            <column name="farmaceutica">Turpis PC</column>
+            <column name="nombre">Rios</column>
+            <column name="precio_compra">7</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">71</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">809599WWV739</column>
+            <column name="farmaceutica">Lectus Pede LLC</column>
+            <column name="nombre">Melton</column>
+            <column name="precio_compra">18</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">32</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">688911XGO943</column>
+            <column name="farmaceutica">Eu Augue Porttitor Foundation</column>
+            <column name="nombre">Dorsey</column>
+            <column name="precio_compra">3</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">100</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">583712LEV861</column>
+            <column name="farmaceutica">Nam Nulla Magna LLC</column>
+            <column name="nombre">Lowe</column>
+            <column name="precio_compra">13</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">97</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">563895AJH961</column>
+            <column name="farmaceutica">Pede Et LLP</column>
+            <column name="nombre">Luna</column>
+            <column name="precio_compra">2</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">19</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">476477MHT950</column>
+            <column name="farmaceutica">Laoreet Lectus Quis Institute</column>
+            <column name="nombre">William</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">54</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">611953IYS076</column>
+            <column name="farmaceutica">Pede Ltd</column>
+            <column name="nombre">Zimmerman</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">22</column>
+            <column name="unidades">61</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">027332OXJ805</column>
+            <column name="farmaceutica">Dictum Company</column>
+            <column name="nombre">Edwards</column>
+            <column name="precio_compra">14</column>
+            <column name="precio_venta">23</column>
+            <column name="unidades">86</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">003361PMU464</column>
+            <column name="farmaceutica">Dolor Dolor Corporation</column>
+            <column name="nombre">Camacho</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">92</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">288223NLX923</column>
+            <column name="farmaceutica">Augue Eu Tempor LLC</column>
+            <column name="nombre">Frye</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">21</column>
+            <column name="unidades">52</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">456226YHT661</column>
+            <column name="farmaceutica">Ornare Sagittis Consulting</column>
+            <column name="nombre">Fulton</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">61</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">321926HIY254</column>
+            <column name="farmaceutica">Aliquet Diam Sed Limited</column>
+            <column name="nombre">Fischer</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">29</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">452787YXE740</column>
+            <column name="farmaceutica">Et Ultrices Corp.</column>
+            <column name="nombre">Cox</column>
+            <column name="precio_compra">5</column>
+            <column name="precio_venta">29</column>
+            <column name="unidades">98</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">117771MHM567</column>
+            <column name="farmaceutica">Vestibulum Mauris Magna Company</column>
+            <column name="nombre">Dalton</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">25</column>
+            <column name="unidades">90</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">204843KNE472</column>
+            <column name="farmaceutica">Cras Corp.</column>
+            <column name="nombre">Barr</column>
+            <column name="precio_compra">4</column>
+            <column name="precio_venta">24</column>
+            <column name="unidades">19</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">717529BLL274</column>
+            <column name="farmaceutica">Nunc Sed Orci Incorporated</column>
+            <column name="nombre">Brennan</column>
+            <column name="precio_compra">15</column>
+            <column name="precio_venta">28</column>
+            <column name="unidades">51</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">616762OVX730</column>
+            <column name="farmaceutica">Aliquam Auctor Foundation</column>
+            <column name="nombre">Snyder</column>
+            <column name="precio_compra">8</column>
+            <column name="precio_venta">30</column>
+            <column name="unidades">10</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">822358HVE011</column>
+            <column name="farmaceutica">Nascetur Consulting</column>
+            <column name="nombre">Lloyd</column>
+            <column name="precio_compra">17</column>
+            <column name="precio_venta">26</column>
+            <column name="unidades">92</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">749751GXU121</column>
+            <column name="farmaceutica">Arcu Nunc LLC</column>
+            <column name="nombre">Curtis</column>
+            <column name="precio_compra">11</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">36</column>
+        </table>
+        <table name="medicamentos">
+            <column name="referencia">994649QMO341</column>
+            <column name="farmaceutica">Lorem Donec Elementum Associates</column>
+            <column name="nombre">Blackwell</column>
+            <column name="precio_compra">6</column>
+            <column name="precio_venta">20</column>
+            <column name="unidades">31</column>
+        </table>
         <!-- Tabla usuarios -->
         <table name="usuarios">
             <column name="nombre">mario</column>

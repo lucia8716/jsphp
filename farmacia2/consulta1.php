@@ -34,6 +34,21 @@ function conectar2()
     mysqli_close($conexion);
 }
 
+function conectar3()
+{
+    require_once "conectar_bd.php";
+    $controlmedicamentos = 'SELECT * from medicamentos where referencia ="' . $_POST['referencia'] . '";';
+    $resultado = mysqli_query($conexion, $controlmedicamentos) or die("Problemas en el select" . mysqli_error($conexion));
+    if (mysqli_num_rows($resultado) > 0) { // La variable $conexion proviene del archivo conectar_bd.php
+
+        $arraydatos = mysqli_fetch_assoc($resultado);
+
+        echo json_encode($arraydatos, JSON_UNESCAPED_UNICODE);
+    }
+    mysqli_close($conexion);
+}
+
+
 if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que exista ese GET y que no este vacío.
     $funcion = intval($_POST['funcion']); //Asignamos una variable a su contenido y de paso comprobamos que sólo sea numérica.
 
@@ -43,5 +58,8 @@ if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que e
 
     if ($funcion == 2) {
         conectar2();
+    }
+    if ($funcion == 3) {
+        conectar3();
     }
 }

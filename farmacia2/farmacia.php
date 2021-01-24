@@ -49,7 +49,7 @@
         <p>
             <input id="i3" type="text" name="referencia" required placeholder="Nº Referencia" minlength="12" maxlength="12">
             <button class="bton" id="btn5" type="button" name="boton5" onclick="compramedicamentos()">Compra Medicamentos</button>
-            <button class="bton" id="btn6" type="button" name="boton6" onclick="">Salir</button>
+            <button class="bton" id="btn6" type="button" name="boton6" onclick="volve2()">Salir</button>
             <button class="bton" id="btn7" type="button" name="boton7" onclick="">Listado de stock</button>
         </p>
 
@@ -61,13 +61,15 @@
 
 
         <p>
-            <input id="i4" type="text" name="referencia" readonly>
-            <input id="i5" type="text" name="farmaceutica" readonly>
-            <input id="i6" type="text" name="nombre" readonly>
-            <input id="i7" type="number" name="precio_compra" readonly>
-            <input id="i8" type="number" name="precio_venta" readonly>
-            <input id="i9" type="number" name="unidades" required placeholder="unidades" minlength="1" maxlength="4" step="0">
+            <label>Nº referencia</label><input id="i4" type="text" name="referencia" readonly>
+            <label>Farmaceutica</label><input id="i5" type="text" name="farmaceutica" readonly>
+            <label>Nombre</label><input id="i6" type="text" name="nombre" readonly>
+            <label>Precio de Compra</label><input id="i7" type="number" name="precio_compra" readonly>
+            <label>Precio de Venta</label><input id="i8" type="number" name="precio_venta" readonly>
+            <label>Unidades en Stock</label> <input id="i9" type="number" name="unidades" readonly>
+            <label>Unidades de Compra</label> <input id="i16" type="number" name="unidades_compra" required placeholder="unidades" minlength="1" maxlength="4" step="0">
             <button class="bton" id="btn8" type="button" name="boton8" onclick="">Comprar</button>
+            <button class="bton" id="btn9" type="button" name="boton9" onclick="volver()">Salir</button>
         </p>
 
     </div>
@@ -84,7 +86,8 @@
             <input id="i13" type="number" name="precio_compra" required placeholder="precio compra" step="0.01">
             <input id="i14" type="number" name="precio_venta" required placeholder="precio venta" step="0.01">
             <input id="i15" type="number" name="unidades" required placeholder="unidades" step="0" minlength="1" maxlength="4">
-            <button class="bton" id="btn9" type="button" name="boton9" onclick="">Listado de stock</button>
+            <button class="bton" id="btn10" type="button" name="boton10" onclick="">Comprar</button>
+            <button class="bton" id="btn11" type="button" name="boton11" onclick="volver()">Salir</button>
         </p>
 
     </div>

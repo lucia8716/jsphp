@@ -43,6 +43,8 @@ if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
                 toastr.success("Usuario conectado, Cargando pagina");
                 $('#di1').hide();
                 $('#di2').fadeIn();
+                $('#i1').val('');
+                $('#i2').val('');
                     
             }
             
@@ -89,7 +91,7 @@ function accesoacompramedicamentos() { //muestra y quita div
     x3=$('#i3').val();
 
     if(filterreferencia.test(x3)==false){
-        toastr.warning("Nombre con formato incorrecto");
+        toastr.warning("Nº Ref con formato incorrecto");
         $('#i3').val('');
         $('#i3').focus();
     }
@@ -113,6 +115,25 @@ $.ajax({
             $('#di3').hide();
             $('#di4').fadeIn();
             $('#i3').val('');
+
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:3,referencia:x3},
+    async: true,
+    success: function (response) {
+
+var info=JSON.parse(response);
+$('#i5').val(info.farmaceutica);
+$('#i6').val(info.nombre);
+$('#i7').val(info.precio_compra);
+$('#i8').val(info.precio_venta);
+$('#i9').val(info.unidades);
+      
+    }
+});
+
+
                 
         }
         
@@ -135,9 +156,19 @@ $.ajax({
     }
 
 
+  }
 
+  function volver(){
+
+    $('#di3').fadeIn();
+    $('#di4').hide();
+    $('#di5').hide();
 
   }
 
+  function volve2(){
 
- 
+    $('#di2').fadeIn();
+    $('#di3').hide();
+      }
+
