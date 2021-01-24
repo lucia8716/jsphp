@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="examen.css">
+</head>
+<body>
+    <div id="f1" name="f1" class="posicion">
+
+       
+        <p>
+            <button id="button1"   onclick="iracompras()">Compra de articulos</button>
+            <button id="button3"   onclick="iraventas()">Venta de articulos</button>
+            <button id="button4"   onclick="irapedidos()">Pedidos de articulos</button>
+          </p>
+    </div>
+
+
+    <div id="f2" name="f2" class="posicion">
+       
+        <p>
+            <label for="nombre">Numero de referencia del medicamento</label> <input id="i1" type="number" name="i1" required placeholder="Nº Ref">
+            <button id="button5"   onclick="compras ()">Compra de medicamentos</button>
+            <button id="button6"   onclick="salir ()">Salir</button>
+            <button id="button9"   onclick="visualizar ()">Listado de Stock</button>
+          </p>
+    </div>
+
+
+    <div id="f3" name="f3" class="posicion">
+        <p>
+            <label>Numero de referencia del medicamento</label> <input id="i2" type="number" name="i2" readonly>
+            <label>Nombre Común</label> <input id="i3" type="text" name="i3" required>
+            <label>Composición</label> <input id="i4" type="text" name="i4" required>
+            <label>Laboratorio</label> <input id="i5" type="text" name="i5" required>
+            <label>Precio Compra</label> <input id="i6" type="number" name="i6" required step="0.01">
+            <label>Precio Venta</label> <input id="i7" type="number" name="i7" required step="0.01">
+            <label>Unidades</label> <input id="i8" type="number" name="i8" required>
+            <button id="button7"  onclick="altanueva()">Compra Nuevos Medicamentos</button>
+        </p>
+
+   </div>
+
+
+   <div id="f4" name="f4" class="posicion">
+    <p>
+        <label>Numero de referencia del medicamento</label> <input id="i9" type="number" name="i9" readonly>
+        <label>Nombre Común</label> <input id="i10" type="text" name="i10" readonly>
+        <label>Composición</label> <input id="i11" type="text" name="i11" readonly>
+        <label>Laboratorio</label> <input id="i12" type="text" name="i12" readonly>
+        <label>Precio Compra</label> <input id="i13" type="number" name="i13" readonly>
+        <label>Precio Venta</label> <input id="i14" type="number" name="i14" readonly>
+        <label>Unidades en Stock</label> <input id="i15" type="number" name="i15" readonly>
+        <label>Compra de unidades</label> <input id="i16" type="number" name="i16" required>
+        <button id="button8"  onclick="compraryaregistrado()">Comprar Medicamentos</button>
+    </p>
+
+</div>
+
+
+<div id="f6" name="f6" class="posicion">
+</div>
+<div id="f5" name="f5" class="posicion">
+    <p>
+                
+        <button id="button9"  onclick="volver ()">Volver</button>
+    </p>
+</div>
+
+
+
+
+<div id="f7" name="f7" class="posicion">
+       
+    <p>
+        <label for="nombre">Numero de referencia del medicamento</label> <input id="i17" type="number" name="i17" required placeholder="Nº Ref">
+        <button id="button10"   onclick="ventas()">Venta de medicamentos</button>
+        <button id="button11"   onclick="salir ()">Salir</button>
+        <button id="button12"   onclick="visualizar2 ()">Listado de Stock</button>
+      </p>
+</div>
+
+<div id="f8" name="f8" class="posicion">
+    <p>
+        <label>Numero de referencia del medicamento</label> <input id="i25" type="number" name="i25" readonly>
+        <label>Nombre Común</label> <input id="i18" type="text" name="i18" readonly>
+        <label>Composición</label> <input id="i19" type="text" name="i19" readonly>
+        <label>Laboratorio</label> <input id="i20" type="text" name="i20" readonly>
+        <label>Precio Compra</label> <input id="i21" type="number" name="i21" readonly>
+        <label>Precio Venta</label> <input id="i22" type="number" name="i22" readonly>
+        <label>Unidades en Stock</label> <input id="i23" type="number" name="i23" readonly>
+        <label>Venta de unidades</label> <input id="i24" type="number" name="i24" required>
+        <button id="button13"  onclick="ventaunidades()">Venta de Medicamentos</button>
+    </p>
+
+</div>
+
+<div id="f10" name="f10" class="posicion">
+</div>
+
+<div id="f9" name="f9" class="posicion">
+    <p>
+                
+        <button id="button14"  onclick="volver2 ()">Volver</button>
+    </p>
+
+</div>
+
+
+
+<div id="f12" name="f12" class="posicion">
+</div>
+
+<div id="f11" name="f11" class="posicion">
+    <p>
+                
+        <button id="button15"  onclick="volver3()">Volver</button>
+    
+    </p>
+
+</div>
+
+
+
+
+
+
+    <script type="text/javascript" src="examen1eva.js">
+    </script>
+
+
+
+</body>
+</html>

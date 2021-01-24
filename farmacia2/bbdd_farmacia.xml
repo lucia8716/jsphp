@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.0.2
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 24-01-2021 a las 00:58:38
+- Versión del servidor: 5.7.31
+- Versión de PHP: 7.3.21
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="bbdd_farmacia" collation="latin1_spanish_ci" charset="latin1">
+            <pma:table name="usuarios">
+                CREATE TABLE `usuarios` (
+                  `nombre` varchar(24) COLLATE latin1_spanish_ci NOT NULL,
+                  `contrasena` varchar(24) COLLATE latin1_spanish_ci NOT NULL,
+                  PRIMARY KEY (`nombre`),
+                  UNIQUE KEY `nombre` (`nombre`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'bbdd_farmacia'
+    -->
+    <database name="bbdd_farmacia">
+        <!-- Tabla usuarios -->
+        <table name="usuarios">
+            <column name="nombre">mario</column>
+            <column name="contrasena">123456</column>
+        </table>
+    </database>
+</pma_xml_export>
