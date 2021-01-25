@@ -247,7 +247,7 @@ if (x5<=x4) {
     }
 
 
-if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true)
+if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true&&x6.length<1001)
 {
 
 $.ajax({
