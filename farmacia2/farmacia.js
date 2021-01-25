@@ -9,6 +9,8 @@ $('#di2').hide();
 $('#di3').hide();
 $('#di4').hide();
 $('#di5').hide();
+$('#di6').hide();
+$('#di7').hide();
 
 function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
 var x1=$('#i1').val();
@@ -204,10 +206,11 @@ function comprarunidades2(){
 var x1=$('#i10').val();
 var x2=$('#i11').val();    
 var x3=$('#i12').val();
-var x4=parseInt($('#i13').val());
-var x5=parseInt($('#i14').val());
-var x6=parseInt($('#i15').val());
+var x4=parseFloat($('#i13').val()).toFixed(2);
+var x5=parseFloat($('#i14').val()).toFixed(2);
+var x6=Number($('#i15').val());
 var conf;
+var ok;
 
 
 if(filnom.test(x2)==false){
@@ -231,11 +234,19 @@ if(filtronum.test(x5)==false){
     $('#i14').focus();
 }
 
-if(filternumero.test(x6)==false||x6.length>1000){
+if(filternumero.test(x6)==false){
     toastr.warning("Unidades con formato incorrecto");
     $('#i15').val('');
     $('#i15').focus();
 }
+
+if(x6<1||x6>1000){
+    toastr.warning("Los pedidos tienen que ser inferiores a 1001");
+    $('#i15').val('');
+    $('#i15').focus();
+}else{ok=true;}
+
+
 
 if (x5<=x4) {
      conf=false;
@@ -247,13 +258,14 @@ if (x5<=x4) {
     }
 
 
-if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true&&x6.length<1001)
+if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true&&x6<1001&&ok==true)
 {
 
+    alert(x5);
 $.ajax({
     type: "POST",
     url: "consulta1.php",
-    data: {funcion:5,referencia:x1,farmaceutica:x2,nombre:x3,precio_venta:x4,precio_compra:x5,unidades:x6},
+    data: {funcion:5,referencia:x1,farmaceutica:x2,nombre:x3,precio_venta:x5,precio_compra:x4,unidades:x6},
     async: true,
     success: function (response) {
 
@@ -274,6 +286,25 @@ $.ajax({
 
 }
 
+}
+
+function listadostock(){
+    $('#di3').hide();
+    $('#di6').fadeIn("slow");
+    $('#di7').fadeIn("slow");
+
+    $.ajax({
+        type: "POST",
+        url: "consulta1.php",
+        data: {funcion:6},
+        async: true,
+        success: function (response) {
+
+            var info=JSON.parse(response);
+            $('#mostrar').html(info);
+            
+        }
+    });
 
 
 

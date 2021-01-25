@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="farmacia.css">
+
     <link rel="stylesheet" href="toast.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="toastr.js"></script>
@@ -50,7 +50,7 @@
             <input id="i3" type="text" name="referencia" required placeholder="Nº Referencia" minlength="12" maxlength="12">
             <button class="bton" id="btn5" type="button" name="boton5" onclick="compramedicamentos()">Compra Medicamentos</button>
             <button class="bton" id="btn6" type="button" name="boton6" onclick="volve2()">Salir</button>
-            <button class="bton" id="btn7" type="button" name="boton7" onclick="">Listado de stock</button>
+            <button class="bton" id="btn7" type="button" name="boton7" onclick="listadostock()">Listado de stock</button>
         </p>
 
     </div>
@@ -91,9 +91,39 @@
         </p>
 
     </div>
+    <div id="di6">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th id="t1">Nº Ref</th>
+                    <th id="t2">Farmaceutica</th>
+                    <th id="t3">Nombre</th>
+                    <th id="t4">Precio de Compra</th>
+                    <th id="t5"> Precio de Venta</th>
+                    <th id="t6">Stock</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="di7">
+        <table id="tabla2">
+            <thead id="mostrar">
+                <tr>
+                    <th id="ma"></th>
+                    <th id="mar"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 
-
-
+    <link rel="stylesheet" href="farmacia.css">
     <script src="farmacia.js" type="text/javascript"></script>
 </body>
 

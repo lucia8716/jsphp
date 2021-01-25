@@ -2,26 +2,34 @@
 /* Parte del css esta cogido de internet, para el plugin de los alert y para la consulta*/
 
   
-#di2{
-
-display: none;
+#di6 {
+  position: absolute;
+top: 55%;
 
 }
 
-#di3{
+#di7 {
+  position: absolute;
+top: 64%; 
 
-  display: none;
-  
-  }
-  
-  #di4{
-
-    display: none;
-    
-    }
+}
 
 
-
+#t1{
+  width: 113px;
+}
+#t2{
+  width: 542px;
+}
+#t3{
+  width: 195px;
+}
+#t4{
+  width:118px;
+}
+#t5{
+  width:77px;
+}
 
 
 .divx1{
@@ -222,7 +230,7 @@ border: none;
   }
 
   table {
-    width: 800px;
+    width: 100%;
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -231,7 +239,7 @@ border: none;
 
   th,
 td {
-	padding: 15px;
+	padding: 9px;
 	background-color: rgba(255,255,255,0.2);
 	color: #fff;
 }
