@@ -49,6 +49,36 @@ function conectar3()
 }
 
 
+function conectar4()
+{
+    require_once "conectar_bd.php";
+    $cantidadactual = intval($_POST['unidades']);
+    $cantidadcompra = intval($_POST['ucompras']);
+    $resultado = $cantidadactual + $cantidadcompra;
+    echo $resultado;
+
+    mysqli_query($conexion, "update medicamentos set unidades =$resultado where referencia='" . $_POST['referencia'] . "'") or die("Problemas en el select" . mysqli_error($conexion));
+
+
+    mysqli_close($conexion);
+}
+
+
+
+function conectar5()
+{
+    require_once "conectar_bd.php";
+    $referencia = $_POST['referencia'];
+    $nombre = $_POST['nombre'];
+    $farmaceutica = $_POST['farmaceutica'];
+    $precio_compra = intval($_POST['precio_compra']);
+    $precio_venta = intval($_POST['precio_venta']);
+    $unidades = intval($_POST['unidades']);
+    mysqli_query($conexion, "insert into medicamentos values('$referencia','$farmaceutica','$nombre',$precio_compra,$precio_venta,$unidades)") or die("Problemas en el select" . mysqli_error($conexion));
+    mysqli_close($conexion);
+}
+
+
 if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que exista ese GET y que no este vacío.
     $funcion = intval($_POST['funcion']); //Asignamos una variable a su contenido y de paso comprobamos que sólo sea numérica.
 
@@ -61,5 +91,12 @@ if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que e
     }
     if ($funcion == 3) {
         conectar3();
+    }
+
+    if ($funcion == 4) {
+        conectar4();
+    }
+    if ($funcion == 5) {
+        conectar5();
     }
 }

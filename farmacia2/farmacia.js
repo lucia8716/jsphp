@@ -1,5 +1,7 @@
 var filnom=/^(?!.* (?: |$))[a-z\-]+$/;
 var filtercontraseña=/^([a-zA-Z0-9]){6}/;
+var filternumero=/^([0-9])*$/;
+var filtronum=/^[0-9]+(\.[0-9]{1,2})*$/;
 var filtermatricula=/^([0-9]){4}([a-zA-Z]){3}/;
 var filterreferencia=/^([a-zA-Z0-9]){12}/;
 
@@ -9,8 +11,8 @@ $('#di4').hide();
 $('#di5').hide();
 
 function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
-x1=$('#i1').val();
-x2=$('#i2').val();
+var x1=$('#i1').val();
+var x2=$('#i2').val();
 if(filnom.test(x1)==false){
     toastr.warning("Nombre con formato incorrecto");
     $('#i1').val('');
@@ -88,7 +90,7 @@ function accesoacompramedicamentos() { //muestra y quita div
 
   function compramedicamentos(){
 
-    x3=$('#i3').val();
+    var x3=$('#i3').val();
 
     if(filterreferencia.test(x3)==false){
         toastr.warning("Nº Ref con formato incorrecto");
@@ -172,3 +174,109 @@ $('#i9').val(info.unidades);
     $('#di3').hide();
       }
 
+function comprarunidades(){
+
+    x3=$('#i4').val();
+    x4=$('#i9').val();
+    x5=$('#i16').val();
+
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:4,referencia:x3,unidades:x4,ucompras:x5},
+    async: true,
+    success: function (response) {
+        
+        toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+        toastr.success("Medicamento Comprado");
+        $('#di3').fadeIn("slow");
+        $('#di4').hide();
+        $('#i16').val('');
+
+
+
+    }
+});
+
+}
+
+function comprarunidades2(){
+var x1=$('#i10').val();
+var x2=$('#i11').val();    
+var x3=$('#i12').val();
+var x4=parseInt($('#i13').val());
+var x5=parseInt($('#i14').val());
+var x6=parseInt($('#i15').val());
+var conf;
+
+
+if(filnom.test(x2)==false){
+    toastr.warning("Farmaceutica con formato incorrecto");
+    $('#i11').val('');
+    $('#i11').focus();
+}
+if(filnom.test(x3)==false){
+    toastr.warning("Nombre con formato incorrecto");
+    $('#i12').val('');
+    $('#i12').focus();
+}
+if(filtronum.test(x4)==false){
+    toastr.warning("Precio compra con formato incorrecto");
+    $('#i13').val('');
+    $('#i13').focus();
+}
+if(filtronum.test(x5)==false){
+    toastr.warning("Precio venta con formato incorrecto");
+    $('#i14').val('');
+    $('#i14').focus();
+}
+
+if(filternumero.test(x6)==false||x6.length>1000){
+    toastr.warning("Unidades con formato incorrecto");
+    $('#i15').val('');
+    $('#i15').focus();
+}
+
+if (x5<=x4) {
+     conf=false;
+     toastr.warning("El precio de venta no puede ser inferior al precio de compra,pongase en contacto con administracion para autorizarlo");
+    $('#i14').val('');
+    $('#i14').focus();
+} else {
+   conf=true;
+    }
+
+
+if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true)
+{
+
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:5,referencia:x1,farmaceutica:x2,nombre:x3,precio_venta:x4,precio_compra:x5,unidades:x6},
+    async: true,
+    success: function (response) {
+
+
+        toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+        toastr.success("Medicamento Comprado y registrado");
+        $('#di3').fadeIn("slow");
+        $('#di5').hide();
+        $('#i10').val('');
+        $('#i11').val('');
+        $('#i12').val('');
+        $('#i13').val('');
+        $('#i14').val('');
+        $('#i15').val('');
+        
+    }
+});
+
+}
+
+
+
+
+
+
+}

@@ -68,7 +68,7 @@
             <label>Precio de Venta</label><input id="i8" type="number" name="precio_venta" readonly>
             <label>Unidades en Stock</label> <input id="i9" type="number" name="unidades" readonly>
             <label>Unidades de Compra</label> <input id="i16" type="number" name="unidades_compra" required placeholder="unidades" minlength="1" maxlength="4" step="0">
-            <button class="bton" id="btn8" type="button" name="boton8" onclick="">Comprar</button>
+            <button class="bton" id="btn8" type="button" name="boton8" onclick="comprarunidades()">Comprar</button>
             <button class="bton" id="btn9" type="button" name="boton9" onclick="volver()">Salir</button>
         </p>
 
@@ -83,10 +83,10 @@
             <input id="i10" type="text" name="referencia" readonly>
             <input id="i11" type="text" name="farmaceutica" required placeholder="farmaceutica" minlength="2" maxlength="20">
             <input id="i12" type="text" name="nombre" required placeholder="nombre" minlength="2" maxlength="15">
-            <input id="i13" type="number" name="precio_compra" required placeholder="precio compra" step="0.01">
-            <input id="i14" type="number" name="precio_venta" required placeholder="precio venta" step="0.01">
-            <input id="i15" type="number" name="unidades" required placeholder="unidades" step="0" minlength="1" maxlength="4">
-            <button class="bton" id="btn10" type="button" name="boton10" onclick="">Comprar</button>
+            <input id="i13" type="number" name="precio_compra" required placeholder="precio compra" min="0.01" step="0.01">
+            <input id="i14" type="number" name="precio_venta" required placeholder="precio venta" min="0.01" step="0.01">
+            <input id="i15" type="number" name="unidades" required placeholder="unidades" step="0" min="1" max="1000" step="0">
+            <button class="bton" id="btn10" type="button" name="boton10" onclick="comprarunidades2()">Comprar</button>
             <button class="bton" id="btn11" type="button" name="boton11" onclick="volver()">Salir</button>
         </p>
 
