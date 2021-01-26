@@ -106,9 +106,35 @@ function conectar6()
     mysqli_close($conexion);
 }
 
+function conectar7()
+{
 
+    require_once "conectar_bd.php";
+    $controlreferencia = 'SELECT * from medicamentos where referencia ="' . $_POST['referencia'] . '"';
+    $resultado = mysqli_query($conexion, $controlreferencia) or die("Problemas en el select" . mysqli_error($conexion));
+    $controldestock = mysqli_query($conexion, 'SELECT * from medicamentos where referencia ="' . $_POST['referencia'] . '" and unidades > 0') or die("Error en la consulta");
 
+    if (mysqli_num_rows($resultado) > 0) {
+        if (mysqli_num_rows($controldestock) > 0) { // La variable $conexion proviene del archivo conectar_bd.php
 
+            echo '1';
+        } else {
+            echo '2';
+        }
+    } else {
+        echo '0';
+    }
+    mysqli_close($conexion);
+}
+
+function conectar8()
+{
+    require_once "conectar_bd.php";
+    $referencia = $_POST['referencia'];
+    $resultado = mysqli_query($conexion, "select unidades from medicamentos where referencia ='$referencia'") or die("Problemas en el select" . mysqli_error($conexion));
+    $cuenta = mysqli_fetch_row($resultado)[0];
+    echo $cuenta;
+}
 
 if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que exista ese GET y que no este vacío.
     $funcion = intval($_POST['funcion']); //Asignamos una variable a su contenido y de paso comprobamos que sólo sea numérica.
@@ -133,5 +159,13 @@ if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que e
 
     if ($funcion == 6) {
         conectar6();
+    }
+
+    if ($funcion == 7) {
+        conectar7();
+    }
+
+    if ($funcion == 8) {
+        conectar8();
     }
 }

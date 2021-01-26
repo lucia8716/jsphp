@@ -35,7 +35,7 @@
 
         <p>
             <button class="bton" id="btn2" type="button" name="boton2" onclick="accesoacompramedicamentos()">Compra de articulos</button>
-            <button class="bton" id="btn3" type="button" name="boton3" onclick="">Venta de articulos</button>
+            <button class="bton" id="btn3" type="button" name="boton3" onclick="aventas()">Venta de articulos</button>
             <button class="bton" id="btn4" type="button" name="boton4" onclick="">Pedidos de articulos</button>
         </p>
 
@@ -49,7 +49,7 @@
         <p>
             <input id="i3" type="text" name="referencia" required placeholder="Nº Referencia" minlength="12" maxlength="12">
             <button class="bton" id="btn5" type="button" name="boton5" onclick="compramedicamentos()">Compra Medicamentos</button>
-            <button class="bton" id="btn6" type="button" name="boton6" onclick="volve2()">Salir</button>
+            <button class="bton" id="btn6" type="button" name="boton6" onclick="volve3()">Salir</button>
             <button class="bton" id="btn7" type="button" name="boton7" onclick="listadostock()">Listado de stock</button>
         </p>
 
@@ -91,6 +91,14 @@
         </p>
 
     </div>
+
+
+    <div class="dv" id="di8">
+        <p>
+
+            <button class="bton" id="btn12" type="button" name="boton12" onclick="volve2()">Salir</button>
+        </p>
+    </div>
     <div id="di6">
         <table id="tabla">
             <thead>
@@ -122,6 +130,37 @@
             </thead>
         </table>
     </div>
+
+    <div class="dv" id="di9">
+        <img id="ima1" src="1.jpg">
+
+
+        <p>
+            <input id="i17" type="text" name="referencia" placeholder="Numero de referencia del medicamento" required maxlength="12">
+            <button class="bton" id="btn13" type="button" name="boton13" onclick="ventas()">Venta</button>
+            <button class="bton" id="btn14" type="button" name="boton14" onclick="volve4()">Salir</button>
+        </p>
+
+    </div>
+
+
+    <div class="dv" id="di10">
+        <img id="ima1" src="1.jpg">
+
+        <p>
+            <input id="i18" type="text" name="referencia" readonly>
+            <label>Unidades en Stock</label><input id="i20" type="text" name="cantidadactual" readonly>
+            <input id="i19" type="number" name="cantidad" placeholder="Cantidad a comprar" required max="10000">
+            <button class="bton" id="btn14" type="button" name="boton14" onclick="ventas2()">Venta</button>
+            <button class="bton" id="btn15" type="button" name="boton15" onclick="volve5()">Salir</button>
+        </p>
+
+    </div>
+
+
+
+
+
 
     <link rel="stylesheet" href="farmacia.css">
     <script src="farmacia.js" type="text/javascript"></script>

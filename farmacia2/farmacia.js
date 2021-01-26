@@ -11,6 +11,9 @@ $('#di4').hide();
 $('#di5').hide();
 $('#di6').hide();
 $('#di7').hide();
+$('#di8').hide();
+$('#di9').hide();
+$('#di10').hide();
 
 function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
 var x1=$('#i1').val();
@@ -176,6 +179,14 @@ $('#i9').val(info.unidades);
     $('#di3').hide();
       }
 
+      function volve5(){
+
+        $('#di9').fadeIn();
+        $('#di10').hide();
+          }
+
+
+
 function comprarunidades(){
 
     x3=$('#i4').val();
@@ -292,6 +303,7 @@ function listadostock(){
     $('#di3').hide();
     $('#di6').fadeIn("slow");
     $('#di7').fadeIn("slow");
+    $('#di8').fadeIn("slow");
 
     $.ajax({
         type: "POST",
@@ -306,6 +318,123 @@ function listadostock(){
         }
     });
 
+
+
+
+
+}
+
+function volve2(){
+
+    $('#di3').fadeIn("slow");
+    $('#di6').hide();
+    $('#di7').hide();
+    $('#di8').hide();
+      }
+
+      function volve3(){
+
+        $('#di2').fadeIn("slow");
+        $('#di3').hide();
+                  }
+
+                  function volve4(){
+
+                    $('#di2').fadeIn("slow");
+                    $('#di9').hide();
+                              }
+
+
+
+
+function aventas(){
+
+    $('#di9').fadeIn("slow");
+    $('#di2').hide();
+
+
+}
+
+function ventas(){
+var x1=$('#i17').val();
+
+if(filterreferencia.test(x1)==false){
+    toastr.warning("Nombre con formato incorrecto");
+    $('#i17').val('');
+    $('#i17').focus();
+}else{
+
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:7,referencia:x1},
+    async: true,
+    success: function (response) {
+        if (response==1){//esta registrado
+            console.log(response);
+            toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+            toastr.success("Nº Referencia correcto, Cargando pagina");
+            $('#di10').fadeIn("slow");
+            $('#di9').hide();
+            $('#i18').val(x1);
+            $('#i17').val('');
+
+         $.ajax({
+             type: "POST",
+             url: "consulta1.php",
+             data: {funcion:8,referencia:x1},
+             async: true,
+             success: function (response) {
+                $('#i20').val(response);
+                 
+             }
+         });
+
+                            
+        }
+        
+        if (response==0){//no esta registrado
+
+            toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+            toastr.warning("Nº Referencia no esta registrado");
+            $('#i17').val('');
+            $('#i17').focus();
+
+        }
+
+        if (response==2){//contraseña incorrecta
+
+            toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+            toastr.warning("Producto con stock 0, tienen que adquirir mas material");
+            $('#i17').val('');
+            $('#di2').fadeIn("slow");
+            $('#di9').hide();
+
+        }
+
+
+    }
+});
+
+}
+
+}
+
+function ventas2(){
+
+x1=$('#i18').val();
+x2=$('#i19').val();
+x3=$('#i20').val();
+x4;
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:9,referencia:x1,unidades:x4},
+    async: true,
+    success: function (response) {
+        
+    }
+});
 
 
 
