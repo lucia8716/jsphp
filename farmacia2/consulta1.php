@@ -136,6 +136,77 @@ function conectar8()
     echo $cuenta;
 }
 
+
+function conectar9()
+{
+    require_once "conectar_bd.php";
+
+    $resta = $_POST['unidades'];
+
+    mysqli_query($conexion, "update medicamentos set unidades =$resta where referencia='" . $_POST['referencia'] . "'") or die("Problemas en el select" . mysqli_error($conexion));
+}
+
+
+function conectar10()
+{
+
+    require_once "conectar_bd.php";
+    $actualizacionestancia = 'select * from medicamentos where unidades>5';
+    $busqueda = mysqli_query($conexion, $actualizacionestancia) or die("Problemas en el select" . mysqli_error($conexion));
+
+    $htmltable = '';
+
+    while ($arrayresultados = mysqli_fetch_assoc($busqueda)) {
+
+        $htmltable .= '
+            <tr>
+                <th>' . $arrayresultados['referencia'] . '</th>
+                <th>' . $arrayresultados['farmaceutica'] . '</th>
+                <th>' . $arrayresultados['nombre'] . '</th>
+                <th>' . $arrayresultados['precio_compra'] . '</th>
+                <th>' . $arrayresultados['precio_venta'] . '</th>
+                <th>' . $arrayresultados['unidades'] . '</th>
+            </tr>
+        ';
+    };
+    $json = json_encode($htmltable, JSON_UNESCAPED_UNICODE);
+    echo $json;
+    mysqli_close($conexion);
+}
+
+
+function conectar11()
+{
+
+    require_once "conectar_bd.php";
+
+    $nombre = $_POST['nombre'];
+    $actualizacionestancia = "select * from medicamentos where nombre like '%$nombre%'";
+    $busqueda = mysqli_query($conexion, $actualizacionestancia) or die("Problemas en el select" . mysqli_error($conexion));
+
+    $htmltable = '';
+
+    while ($arrayresultados = mysqli_fetch_assoc($busqueda)) {
+
+        $htmltable .= '
+            <tr>
+                <th>' . $arrayresultados['referencia'] . '</th>
+                <th>' . $arrayresultados['farmaceutica'] . '</th>
+                <th>' . $arrayresultados['nombre'] . '</th>
+                <th>' . $arrayresultados['precio_compra'] . '</th>
+                <th>' . $arrayresultados['precio_venta'] . '</th>
+                <th>' . $arrayresultados['unidades'] . '</th>
+            </tr>
+        ';
+    };
+    $json = json_encode($htmltable, JSON_UNESCAPED_UNICODE);
+    echo $json;
+    mysqli_close($conexion);
+}
+
+
+
+
 if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que exista ese GET y que no este vacío.
     $funcion = intval($_POST['funcion']); //Asignamos una variable a su contenido y de paso comprobamos que sólo sea numérica.
 
@@ -167,5 +238,17 @@ if (isset($_POST['funcion']) && !empty($_POST['funcion'])) { //comprobamos que e
 
     if ($funcion == 8) {
         conectar8();
+    }
+
+    if ($funcion == 9) {
+        conectar9();
+    }
+
+    if ($funcion == 10) {
+        conectar10();
+    }
+
+    if ($funcion == 11) {
+        conectar11();
     }
 }

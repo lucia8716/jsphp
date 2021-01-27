@@ -14,6 +14,9 @@ $('#di7').hide();
 $('#di8').hide();
 $('#di9').hide();
 $('#di10').hide();
+$('#di11').hide();
+$('#di12').hide();
+$('#di13').hide();
 
 function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
 var x1=$('#i1').val();
@@ -115,7 +118,7 @@ $.ajax({
         
         console.log(response);
         if (response==1){//esta registrado
-            console.log(response);
+            
             toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
             toastr.success("Medicamento Registrado, cargando pagina de compra");
             $('#i4').val(x3);
@@ -170,6 +173,14 @@ $('#i9').val(info.unidades);
     $('#di3').fadeIn();
     $('#di4').hide();
     $('#di5').hide();
+    $('#i11').val('');
+    $('#i12').val('');
+    $('#i13').val('');
+    $('#i14').val('');
+    $('#i15').val('');
+
+
+
 
   }
 
@@ -185,6 +196,15 @@ $('#i9').val(info.unidades);
         $('#di10').hide();
           }
 
+
+          function volve6(){
+
+            $('#di2').fadeIn();
+            $('#di11').hide();
+            $('#di12').hide();
+            $('#di13').hide();
+            $('#i21').val('');
+              }
 
 
 function comprarunidades(){
@@ -252,7 +272,7 @@ if(filternumero.test(x6)==false){
 }
 
 if(x6<1||x6>1000){
-    toastr.warning("Los pedidos tienen que ser inferiores a 1001");
+    toastr.warning("Los pedidos tienen que ser entre 1 y 1001");
     $('#i15').val('');
     $('#i15').focus();
 }else{ok=true;}
@@ -272,7 +292,7 @@ if (x5<=x4) {
 if(filnom.test(x2)==true&&filnom.test(x3)==true&&filtronum.test(x4)==true&&filtronum.test(x5)==true&&filtronum.test(x6)==true&&conf==true&&x6<1001&&ok==true)
 {
 
-    alert(x5);
+    
 $.ajax({
     type: "POST",
     url: "consulta1.php",
@@ -359,7 +379,7 @@ function ventas(){
 var x1=$('#i17').val();
 
 if(filterreferencia.test(x1)==false){
-    toastr.warning("Nombre con formato incorrecto");
+    toastr.warning("Nº Referencia con formato incorrecto");
     $('#i17').val('');
     $('#i17').focus();
 }else{
@@ -385,6 +405,9 @@ $.ajax({
              data: {funcion:8,referencia:x1},
              async: true,
              success: function (response) {
+
+
+                
                 $('#i20').val(response);
                  
              }
@@ -420,23 +443,108 @@ $.ajax({
 
 }
 
-function ventas2(){
 
-x1=$('#i18').val();
-x2=$('#i19').val();
-x3=$('#i20').val();
-x4;
+function ventas3(){
+    var x1=$('#i19').val();
+    var x2=$('#i20').val();
+    var x3=$('#i18').val();
+
+    var resta=x2-x1;
+
+    
+    console.log(x1);
+
+if (x1<1){
+
+    toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+    toastr.warning("Valor inferior a 1, introduzca una unidad a comprar");
+    $('#i19').val('');
+    $('#i19').focus();
+}else{
+
+if (resta<0) {
+
+    toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+    toastr.warning("La venta supera el stock disponible, introduzca un nuevo valor o compre mas producto");
+    $('#i19').val('');
+    $('#i19').focus();
+    
+} else {
+
 $.ajax({
     type: "POST",
     url: "consulta1.php",
-    data: {funcion:9,referencia:x1,unidades:x4},
+    data: {funcion:9,unidades:resta,referencia:x3},
     async: true,
     success: function (response) {
+
+        toastr.options = {"positionClass": "toast-top-center","timeOut": "1200",}
+        toastr.success("Venta Medicamento realizada correctamente");
+        $('#di9').fadeIn("slow");
+        $('#di10').hide();
+        $('#i19').val('');
         
     }
 });
 
 
 
+
+    
+}
+}
+
+}
+
+
+function listadoproductos(){
+
+    $('#di2').hide();
+    $('#di11').fadeIn("slow");
+    $('#di12').fadeIn("slow");
+    $('#di13').fadeIn("slow");
+
+    $.ajax({
+        type: "POST",
+        url: "consulta1.php",
+        data: {funcion:10},
+        async: true,
+        success: function (response) {
+
+            var info=JSON.parse(response);
+            $('#mostrar2').html(info);
+            
+        }
+    });
+
+
+
+}
+
+
+function buscadorpornombre(){
+
+    var x1=$('#i21').val();
+
+    if(filnom.test(x1)==false){
+        toastr.warning("Nombre con formato incorrecto");
+        $('#i21').val('');
+        $('#i21').focus();
+    }else{
+
+$.ajax({
+    type: "POST",
+    url: "consulta1.php",
+    data: {funcion:11,nombre:x1},
+    async: true,
+    success: function (response) {
+        var info=JSON.parse(response);
+        $('#mostrar2').html(info);
+    }
+});
+
+
+
+    }
 
 }

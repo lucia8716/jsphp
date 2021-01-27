@@ -36,7 +36,7 @@
         <p>
             <button class="bton" id="btn2" type="button" name="boton2" onclick="accesoacompramedicamentos()">Compra de articulos</button>
             <button class="bton" id="btn3" type="button" name="boton3" onclick="aventas()">Venta de articulos</button>
-            <button class="bton" id="btn4" type="button" name="boton4" onclick="">Pedidos de articulos</button>
+            <button class="bton" id="btn4" type="button" name="boton4" onclick="listadoproductos()">Pedidos de articulos</button>
         </p>
 
     </div>
@@ -151,11 +151,55 @@
             <input id="i18" type="text" name="referencia" readonly>
             <label>Unidades en Stock</label><input id="i20" type="text" name="cantidadactual" readonly>
             <input id="i19" type="number" name="cantidad" placeholder="Cantidad a comprar" required max="10000">
-            <button class="bton" id="btn14" type="button" name="boton14" onclick="ventas2()">Venta</button>
+            <button class="bton" id="btn14" type="button" name="boton14" onclick="ventas3()">Venta</button>
             <button class="bton" id="btn15" type="button" name="boton15" onclick="volve5()">Salir</button>
         </p>
 
     </div>
+
+
+    <div class="dv" id="di11">
+        <p>
+            <input id="i21" type="text" name="referencia" placeholder="Buscador por nombre" maxlength="12">
+            <button class="bton" id="btn13" type="button" name="boton13" onclick="buscadorpornombre()">Buscar</button>
+            <button class="bton" id="btn12" type="button" name="boton12" onclick="volve6()">Salir</button>
+
+        </p>
+    </div>
+    <div id="di12">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th id="t1">Nº Ref</th>
+                    <th id="t2">Farmaceutica</th>
+                    <th id="t3">Nombre</th>
+                    <th id="t4">Precio de Compra</th>
+                    <th id="t5"> Precio de Venta</th>
+                    <th id="t6">Stock</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="di13">
+        <table id="tabla2">
+            <thead id="mostrar2">
+                <tr>
+                    <th id="ma"></th>
+                    <th id="mar"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+
 
 
 
