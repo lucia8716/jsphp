@@ -4,10 +4,10 @@ var filternumero=/^([0-9])*$/;
 var filtronum=/^[0-9]+(\.[0-9]{1,2})*$/;
 var filtermatricula=/^([0-9]){4}([a-zA-Z]){3}/;
 var filterreferencia=/^([a-zA-Z0-9]){12}/;
+var filterreferencia2=/^([a-zA-Z0-9\-\*]){12}/;
 
 $('#di2').hide();
 $('#di3').hide();
-
 
 function loging(){//funcion para comprobar nombre y contraseña con formato incorrecto y si es correcto se conecta a bbdd
 var x1=$('#i1').val();
@@ -79,4 +79,27 @@ if(filtercontraseña.test(x2)==true&&filnom.test(x1)==true){
         }
     });
  }
+}
+
+function entradas(){
+
+    var x1=$('#i3').val();
+    x1=x1.toUpperCase();
+
+
+    if(filterreferencia2.test(x1)==false){
+        toastr.warning("Nombre con formato incorrecto");
+        $('#i3').val('');
+        $('#i3').focus();
+    }
+
+
+
+}
+
+function accesoacompramedicamentos(){
+
+    $('#di2').hide();
+    $('#di3').fadeIn();
+
 }

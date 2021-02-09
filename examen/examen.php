@@ -35,8 +35,24 @@
 
         <p>
             <button class="bton" id="btn2" type="button" name="boton2" onclick="accesoacompramedicamentos()">Compra de articulos</button>
-            <button class="bton" id="btn3" type="button" name="boton3" onclick="aventas()">Venta de articulos</button>
-            <button class="bton" id="btn4" type="button" name="boton4" onclick="listadoproductos()">Pedidos de articulos</button>
+            <button class="bton" id="btn3" type="button" name="boton3" onclick="">Venta de articulos</button>
+            <button class="bton" id="btn4" type="button" name="boton4" onclick="">Pedidos de articulos</button>
+        </p>
+
+    </div>
+
+
+    <div class="dv" id="di3">
+        <img id="ima1" src="1.jpg">
+
+
+        <p>
+            <input id="i3" type="text" name="nombre" required placeholder="Nombre" minlength="3">
+            <input id="i4" type="text" name="clave" required placeholder="Contraseña" maxlength="6" minlength="6">
+            <input id="i5" type="number" name="clave" required placeholder="numero" min="1" max="600">
+            <button class="bton4" id="btn4" type="button" name="boton4" onclick="entradas()">Compra de articulos</button>
+
+
         </p>
 
     </div>
